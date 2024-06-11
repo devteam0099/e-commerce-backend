@@ -1,0 +1,6 @@
+/node_modules/
+/public/
+/utils/cloudinary.config.js
+/utils/db.connection.js
+/package.json
+/package-lock.json
