@@ -13,6 +13,7 @@ app.use(urlencoded({extended: true}))
 app.use(cors(corsConfig()))
 dbconnection();
 cloudinaryConfig();
+//using middleware to control routes
 
 app.use('/',router)
 
