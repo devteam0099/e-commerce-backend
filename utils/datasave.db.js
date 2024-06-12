@@ -15,7 +15,6 @@ let savedatatodb =async (imageurl,usernamecs)=>{
  catch{
     console.log("user could not register! try again")
  }
-  console.log(imageurl)
         
 }
 export default savedatatodb;
