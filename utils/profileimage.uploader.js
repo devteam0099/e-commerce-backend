@@ -12,7 +12,7 @@ let profileimageuploader = async(profile)=>{
         profileimageurl = resp.secure_url
         fs.unlinkSync(profile.profileimage[0].path)
         const upload = new ApiSuccess('profile picture uploaded successfully' , 200)
-        console.log('image uploaded')
+        console.log('image uploaded on cloudinary')
         
     })
     .catch(()=>{

@@ -2,8 +2,10 @@ import express from 'express'
 import { upload } from '../middlewares/sample.middleware.js'
 import samplecontroller from '../controllers/sample.controller.js';
 import registerUserController from '../controllers/registeruser.controller.js';
+import loginUserController from '../controllers/loginuser.controller.js';
 const router = express.Router()
-const userRegisterRoute = express.Router()
+const RegisterRoute = express.Router()
+const loginRoute = express.Router()
     
     router.post('/',upload.fields([{
         name : "image1",
@@ -16,14 +18,24 @@ const userRegisterRoute = express.Router()
         maxCount : 1
      }]), samplecontroller)
        
-   userRegisterRoute.post('/register',upload.fields([{
-    name: 'profileimage',
-    maxCount: 1
-   }]),registerUserController)
 
+     
+       
+        RegisterRoute.post('/register',upload.fields([{
+            name: 'profileimage',
+            maxCount: 1
+           }]),registerUserController)
+
+
+        loginRoute.post('/login',loginUserController)
+        
+
+     
+   
 
 
    
-   export{userRegisterRoute}
+   export{RegisterRoute}
+   export {loginRoute}
     
 export default router;

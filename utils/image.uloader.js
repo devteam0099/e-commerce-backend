@@ -13,7 +13,7 @@ async function uploadImage(image) {
     imageurl.push(result.secure_url)
     fs.unlinkSync(image.image1[0].path)
    const api = new ApiSuccess("image uploaded successfully" ,200)
-    console.log(api.message,api.statuscode)
+    console.log(api.message,api.statuscode,'image has been uploaded on cloudinary')
    })
    .catch(()=>{
    const err = new ApiError("image was not uploaded successfully",300)
