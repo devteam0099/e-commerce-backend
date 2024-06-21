@@ -1,6 +1,6 @@
 import express, { urlencoded } from 'express';
 import cors from 'cors'
-import { RegisterRoute,loginRoute } from './routes/webroutes.js';
+import { RegisterRoute,loginRoute,updateRoute } from './routes/webroutes.js';
 import dbconnection from './utils/db.connection.js';
 import cloudinaryConfig from './utils/cloudinary.config.js';
 import corsConfig from './utils/cors.config.js';
@@ -20,6 +20,7 @@ app.use('/',router)
 
 app.use('/api/users',RegisterRoute)
 app.use('/api/users',loginRoute)
+app.use('/api/update-users', updateRoute)
 
 
 app.listen(port, () => {

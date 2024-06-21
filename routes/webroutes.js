@@ -3,9 +3,11 @@ import { upload } from '../middlewares/sample.middleware.js'
 import samplecontroller from '../controllers/sample.controller.js';
 import registerUserController from '../controllers/registeruser.controller.js';
 import loginUserController from '../controllers/loginuser.controller.js';
+import passwordUpdateController from '../controllers/updatePassword.controller.js';
 const router = express.Router()
 const RegisterRoute = express.Router()
 const loginRoute = express.Router()
+const updateRoute = express.Router()
     
     router.post('/',upload.fields([{
         name : "image1",
@@ -29,13 +31,14 @@ const loginRoute = express.Router()
 
         loginRoute.post('/login',loginUserController)
         
-
-     
+        updateRoute.post('/change-password',passwordUpdateController)
+      
    
 
 
    
    export{RegisterRoute}
    export {loginRoute}
+   export {updateRoute}
     
 export default router;

@@ -10,12 +10,14 @@ let loginUserController = async(req,res)=>{
         console.log(finduser)
         if(finduser.password === password){
             console.log('user loggedin successfully')
+            const userinfo = {...finduser.toObject(),password : undefined}
+            res.send(userinfo)
         }
         else{
             console.log('incorrect password')
         }
 
-        res.status(200).json({ message: 'User found' })
+       
     }
     else{
         console.log('username does not exists')
