@@ -1,23 +1,23 @@
 import nodemailer from 'nodemailer'
 
-let mailsender = async(useremail)=>{
+let mailsender = async(useremail,username,otp)=>{
 
-
+console.log(useremail,username,otp)
 const transport = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port : 587,
     secure : false,
     auth:{
-        user :'saige.crona77@ethereal.email',
-        pass : 'nQjfE5p9nhdZbQv3fB'
+        user :'mohammed.will@ethereal.email',
+        pass : 'U7Fxa8n5bNFpD49538'
     }
 })
 
 const mailOptions = {
     from : ' "mohammad Abdulah" <ecommercebusiness000@ethereal.email>',
     to : useremail,
-    subject : 'this is testing mail using ethereal',
-    Text : 'your configuration has been done for testing mail'
+    subject : `your otp code for reset password against username ${username} is ${otp}.Never share this code with anyone!`,
+    Text : `your otp code for reset password against username ${username} is ${otp}.Never share this code with anyone!`
 
     
 }
@@ -29,5 +29,6 @@ const mailOptions = {
         console.log('mail sent successfully')
     }
 })
+return otp
 }
 export default mailsender;
