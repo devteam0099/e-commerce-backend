@@ -12,7 +12,7 @@ let passwordUpdateController = async(req,res)=>{
          
         const rand = Math.floor(Math.random() * 100000) + 100000
          mailsender(email,username,rand)
-        res.send({ code: rand })
+         res.send({ code: rand})
         
         console.log('code before sending',rand)
         
@@ -24,13 +24,12 @@ let passwordUpdateController = async(req,res)=>{
         else{
 
             console.log('account did not match')
-            res.send('account does not exist on this username')    
+            res.send({ code: "account did not found"})    
                   
         }
     }
     catch(error) {
-    console.log(error)
-     res.send('account does not exist on this username')    
+    console.log(error)    
    }
 }
 export default passwordUpdateController

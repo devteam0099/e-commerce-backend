@@ -5,11 +5,13 @@ import registerUserController from '../controllers/registeruser.controller.js';
 import loginUserController from '../controllers/loginuser.controller.js';
 import passwordUpdateController from '../controllers/updatePassword.controller.js';
 import searchuserController from '../controllers/searchuser.controller.js';
+import saveAndUpdateController from '../controllers/saveAndUpdate.controller.js';
 const router = express.Router()
 const RegisterRoute = express.Router()
 const loginRoute = express.Router()
 const updateRoute = express.Router()
  const searchRoute = express.Router()   
+ const saveAndUpdateRoute = express.Router()
     router.post('/',upload.fields([{
         name : "image1",
         maxCount : 1
@@ -36,12 +38,13 @@ const updateRoute = express.Router()
        
         searchRoute.post('/find-user',searchuserController)
    
-
+        saveAndUpdateRoute.post('/save-pass',saveAndUpdateController)
 
    
    export{RegisterRoute}
    export {loginRoute}
    export {updateRoute}
    export {searchRoute}
+   export {saveAndUpdateRoute}
     
 export default router;
