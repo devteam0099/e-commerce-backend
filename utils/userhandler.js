@@ -3,9 +3,9 @@ import ApiError from "./ApiError.js";
 import ApiSuccess from "./ApiSuccess.js";
 import { User } from "../models/user.model.js";
 
-const userhandler = async(userdata,profilepictureurl)=>{
+const userhandler = async(userdata,profilepictureurl = null)=>{
     console.log(userdata,profilepictureurl)
-    console.log("control is in userhandler. new user constructor defined ")
+    
     const {email , username} = userdata
     
     const existeduser = await User.findOne({$or :[{email},{username}]})
