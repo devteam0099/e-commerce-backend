@@ -7,6 +7,12 @@ import passwordUpdateController from '../controllers/updatePassword.controller.j
 import searchuserController from '../controllers/searchuser.controller.js';
 import saveAndUpdateController from '../controllers/saveAndUpdate.controller.js';
 import productSaveController from '../controllers/productSave.controller.js';
+import displayProductsController from '../controllers/displayProducts.controller.js'
+import productsUpdateController from '../controllers/updateproduct.controller.js';
+import deleteProductController from '../controllers/deleteproduct.controller.js';
+import findStoreController from '../controllers/findstore.controller.js';
+import registerStoreController from '../controllers/registerstore.controller.js';
+import retrieveShopController from '../controllers/retrievestore.controller.js';
 const router = express.Router()
 const RegisterRoute = express.Router()
 const loginRoute = express.Router()
@@ -14,6 +20,12 @@ const updateRoute = express.Router()
  const searchRoute = express.Router()   
  const saveAndUpdateRoute = express.Router()
  const productSaveRoute = express.Router()
+ const displayProductsRoute = express.Router()
+ const productsUpdateRoute = express.Router()
+ const deleteProductRoute = express.Router()
+ const findStoreRoute = express.Router()
+ const registerStoreRoute = express.Router()
+ const retrieveStoreRoute = express.Router()
     router.post('/',upload.fields([{
         name : "image1",
         maxCount : 1
@@ -56,6 +68,17 @@ const updateRoute = express.Router()
             maxCount : 1
         }]), productSaveController)
 
+        displayProductsRoute.post('/find-products' , displayProductsController)
+
+        productsUpdateRoute.put('/update-product',productsUpdateController)
+
+        deleteProductRoute.post('/remove-data',deleteProductController)
+
+        findStoreRoute.post('/find-store',findStoreController)
+        
+        registerStoreRoute.post('/shop-build',registerStoreController)
+
+        retrieveStoreRoute.post('/access-shop',retrieveShopController)
    
    export{RegisterRoute}
    export {loginRoute}
@@ -63,5 +86,10 @@ const updateRoute = express.Router()
    export {searchRoute}
    export {saveAndUpdateRoute}
    export {productSaveRoute}
-    
+   export {displayProductsRoute}
+   export {productsUpdateRoute}
+   export {deleteProductRoute} 
+   export {findStoreRoute}
+   export {registerStoreRoute}
+   export {retrieveStoreRoute}
 export default router;

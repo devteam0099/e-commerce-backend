@@ -32,10 +32,10 @@ const saveProductModel = new  mongoose.Schema({
         type : String,
         required : true
     },
-    CreatedBy : {
-        type : mongoose.Schema.Types.ObjectId,
-        ref : "User"
-    }
+   createdBy : {
+    type : String,
+    required : true
+   }
 
 
 },{timestamps : true})

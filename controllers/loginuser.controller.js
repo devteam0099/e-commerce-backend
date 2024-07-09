@@ -11,8 +11,12 @@ let loginUserController = async(req,res)=>{
         if(finduser.password === password){
             console.log('user loggedin successfully')
             const userinfo = {...finduser.toObject(),password : undefined}
-            res.send(userinfo)
+            res.cookie('username', 'ab.dev2024', { expires: new Date(Date.now() + 3600000),domain : "localhost:5173", samesite : 'none',httpOnly : false });
+
+
+          res.send(userinfo)
         }
+
         else{
             console.log('incorrect password')
         }

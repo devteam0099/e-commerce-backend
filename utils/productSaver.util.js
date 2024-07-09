@@ -11,12 +11,12 @@ let productSaver = async(productData,prodImageUrls)=>{
     productDiscount : productdisc,
     productDisccription : productdiscription,
     productVarients : productvarients,
-    CreatedBy : username
+   createdBy : username
 
    })
-   
+   console.log(saveProduct)
    try {
-     // await saveProduct.save()
+      await saveProduct.save()
       console.log('product has been successfully')
    } catch (error) {
       console.log('product did not save')
