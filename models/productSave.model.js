@@ -32,6 +32,18 @@ const saveProductModel = new  mongoose.Schema({
         type : String,
         required : true
     },
+    productColors : [
+        {
+            type : String,
+            
+        }
+    ],
+    productSizes : [
+        {
+            type : Object,
+            
+        }
+    ],
    createdBy : {
     type : String,
     required : true

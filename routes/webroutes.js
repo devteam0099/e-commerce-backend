@@ -13,6 +13,8 @@ import deleteProductController from '../controllers/deleteproduct.controller.js'
 import findStoreController from '../controllers/findstore.controller.js';
 import registerStoreController from '../controllers/registerstore.controller.js';
 import retrieveShopController from '../controllers/retrievestore.controller.js';
+import getProductsController from '../controllers/getproducts.controller.js';
+import placeOrderController from '../controllers/placeorder.controller.js';
 const router = express.Router()
 const RegisterRoute = express.Router()
 const loginRoute = express.Router()
@@ -26,6 +28,8 @@ const updateRoute = express.Router()
  const findStoreRoute = express.Router()
  const registerStoreRoute = express.Router()
  const retrieveStoreRoute = express.Router()
+ const getProductsRoute = express.Router()
+ const placeOrderRoute = express.Router()
     router.post('/',upload.fields([{
         name : "image1",
         maxCount : 1
@@ -79,6 +83,10 @@ const updateRoute = express.Router()
         registerStoreRoute.post('/shop-build',registerStoreController)
 
         retrieveStoreRoute.post('/access-shop',retrieveShopController)
+
+        getProductsRoute.get('/products-data',getProductsController)
+
+        placeOrderRoute.post('/order-details',placeOrderController)
    
    export{RegisterRoute}
    export {loginRoute}
@@ -92,4 +100,6 @@ const updateRoute = express.Router()
    export {findStoreRoute}
    export {registerStoreRoute}
    export {retrieveStoreRoute}
+   export {getProductsRoute}
+   export {placeOrderRoute}
 export default router;
