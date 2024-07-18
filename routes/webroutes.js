@@ -15,6 +15,9 @@ import registerStoreController from '../controllers/registerstore.controller.js'
 import retrieveShopController from '../controllers/retrievestore.controller.js';
 import getProductsController from '../controllers/getproducts.controller.js';
 import placeOrderController from '../controllers/placeorder.controller.js';
+import searchStoreController from '../controllers/searchStore.controller.js';
+import obtainProductsController from '../controllers/obtainProducts.controller.js';
+import productByNameController from '../controllers/retrieveProductsByName.controller.js';
 const router = express.Router()
 const RegisterRoute = express.Router()
 const loginRoute = express.Router()
@@ -30,6 +33,10 @@ const updateRoute = express.Router()
  const retrieveStoreRoute = express.Router()
  const getProductsRoute = express.Router()
  const placeOrderRoute = express.Router()
+ const searchStoreRoute = express.Router()
+ const obtainProductsRoute = express.Router()
+ const productByNameRoute = express.Router()
+
     router.post('/',upload.fields([{
         name : "image1",
         maxCount : 1
@@ -87,6 +94,12 @@ const updateRoute = express.Router()
         getProductsRoute.get('/products-data',getProductsController)
 
         placeOrderRoute.post('/order-details',placeOrderController)
+
+        searchStoreRoute.post('/store-info',searchStoreController)
+
+        obtainProductsRoute.post('/obtain-products',obtainProductsController)
+
+        productByNameRoute.post('/obtain-products',productByNameController)
    
    export{RegisterRoute}
    export {loginRoute}
@@ -102,4 +115,7 @@ const updateRoute = express.Router()
    export {retrieveStoreRoute}
    export {getProductsRoute}
    export {placeOrderRoute}
+   export {searchStoreRoute}
+   export {obtainProductsRoute}
+   export {productByNameRoute}
 export default router;
