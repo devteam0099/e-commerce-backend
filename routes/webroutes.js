@@ -12,12 +12,15 @@ import productsUpdateController from '../controllers/updateproduct.controller.js
 import deleteProductController from '../controllers/deleteproduct.controller.js';
 import findStoreController from '../controllers/findstore.controller.js';
 import registerStoreController from '../controllers/registerstore.controller.js';
+import productByCatagoryController from '../controllers/retrieveProductsByCatagory.controller.js';
 import retrieveShopController from '../controllers/retrievestore.controller.js';
 import getProductsController from '../controllers/getproducts.controller.js';
 import placeOrderController from '../controllers/placeorder.controller.js';
 import searchStoreController from '../controllers/searchStore.controller.js';
 import obtainProductsController from '../controllers/obtainProducts.controller.js';
 import productByNameController from '../controllers/retrieveProductsByName.controller.js';
+import cartController from '../controllers/cart.controller.js';
+import obtainCartsController from '../controllers/obtainCarts.controller.js';
 const router = express.Router()
 const RegisterRoute = express.Router()
 const loginRoute = express.Router()
@@ -36,6 +39,9 @@ const updateRoute = express.Router()
  const searchStoreRoute = express.Router()
  const obtainProductsRoute = express.Router()
  const productByNameRoute = express.Router()
+ const productByCatagoryRoute = express.Router()
+ const cartRoute = express.Router()
+ const obtainCartsRoute = express.Router()
 
     router.post('/',upload.fields([{
         name : "image1",
@@ -100,6 +106,12 @@ const updateRoute = express.Router()
         obtainProductsRoute.post('/obtain-products',obtainProductsController)
 
         productByNameRoute.post('/obtain-products',productByNameController)
+
+        productByCatagoryRoute.post('/catagories',productByCatagoryController)
+
+        cartRoute.post('/cart-products',cartController)
+
+        obtainCartsRoute.post('/cart-products',obtainCartsController)
    
    export{RegisterRoute}
    export {loginRoute}
@@ -118,4 +130,7 @@ const updateRoute = express.Router()
    export {searchStoreRoute}
    export {obtainProductsRoute}
    export {productByNameRoute}
+   export {productByCatagoryRoute}
+   export {cartRoute}
+   export {obtainCartsRoute}
 export default router;

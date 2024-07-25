@@ -1,7 +1,8 @@
 import express, { urlencoded } from 'express';
 import cors from 'cors'
 import { RegisterRoute,loginRoute,updateRoute,searchRoute,saveAndUpdateRoute,productSaveRoute,displayProductsRoute,productsUpdateRoute,deleteProductRoute,findStoreRoute,registerStoreRoute,retrieveStoreRoute
-         ,getProductsRoute,placeOrderRoute,searchStoreRoute,obtainProductsRoute,productByNameRoute
+         ,getProductsRoute,placeOrderRoute,searchStoreRoute,obtainProductsRoute,productByNameRoute,productByCatagoryRoute
+         ,cartRoute,obtainCartsRoute
  } from './routes/webroutes.js';
 import dbconnection from './utils/db.connection.js';
 import cloudinaryConfig from './utils/cloudinary.config.js';
@@ -37,6 +38,10 @@ app.use('/api/place-order',placeOrderRoute)
 app.use('/api/search-store',searchStoreRoute)
 app.use('/api/store-data',obtainProductsRoute)
 app.use('/api/product-data',productByNameRoute)
+app.use('/api/product',productByCatagoryRoute)
+app.use('/api/cart',cartRoute)
+app.use('/api/products-data',obtainCartsRoute)
+
 
 app.listen(port, () => {
   
