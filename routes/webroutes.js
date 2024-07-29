@@ -21,6 +21,7 @@ import obtainProductsController from '../controllers/obtainProducts.controller.j
 import productByNameController from '../controllers/retrieveProductsByName.controller.js';
 import cartController from '../controllers/cart.controller.js';
 import obtainCartsController from '../controllers/obtainCarts.controller.js';
+import dataSender from '../controllers/jsonDataSender.js';
 const router = express.Router()
 const RegisterRoute = express.Router()
 const loginRoute = express.Router()
@@ -42,6 +43,7 @@ const updateRoute = express.Router()
  const productByCatagoryRoute = express.Router()
  const cartRoute = express.Router()
  const obtainCartsRoute = express.Router()
+ const dataSenderRoute = express.Router()
 
     router.post('/',upload.fields([{
         name : "image1",
@@ -112,6 +114,8 @@ const updateRoute = express.Router()
         cartRoute.post('/cart-products',cartController)
 
         obtainCartsRoute.post('/cart-products',obtainCartsController)
+
+        dataSenderRoute.get('/send-data',dataSender)
    
    export{RegisterRoute}
    export {loginRoute}
@@ -133,4 +137,5 @@ const updateRoute = express.Router()
    export {productByCatagoryRoute}
    export {cartRoute}
    export {obtainCartsRoute}
+   export {dataSenderRoute}
 export default router;

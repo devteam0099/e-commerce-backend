@@ -1,7 +1,7 @@
 import express, { urlencoded } from 'express';
 import cors from 'cors'
 import { RegisterRoute,loginRoute,updateRoute,searchRoute,saveAndUpdateRoute,productSaveRoute,displayProductsRoute,productsUpdateRoute,deleteProductRoute,findStoreRoute,registerStoreRoute,retrieveStoreRoute
-         ,getProductsRoute,placeOrderRoute,searchStoreRoute,obtainProductsRoute,productByNameRoute,productByCatagoryRoute
+         ,getProductsRoute,placeOrderRoute,searchStoreRoute,obtainProductsRoute,productByNameRoute,productByCatagoryRoute,dataSenderRoute
          ,cartRoute,obtainCartsRoute
  } from './routes/webroutes.js';
 import dbconnection from './utils/db.connection.js';
@@ -41,6 +41,7 @@ app.use('/api/product-data',productByNameRoute)
 app.use('/api/product',productByCatagoryRoute)
 app.use('/api/cart',cartRoute)
 app.use('/api/products-data',obtainCartsRoute)
+app.use('/api/send-resp',dataSenderRoute)
 
 
 app.listen(port, () => {
